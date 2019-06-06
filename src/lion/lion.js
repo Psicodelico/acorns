@@ -50,6 +50,7 @@ function init() {
     renderer.setSize(WIDTH, HEIGHT);
     renderer.shadowMapEnabled = true;
     container = document.getElementById('world');
+    debugger;
     container.appendChild(renderer.domElement);
     windowHalfX = WIDTH / 2;
     windowHalfY = HEIGHT / 2;
@@ -694,13 +695,17 @@ function render() {
     renderer.render(scene, camera);
 }
 
+window.addEventListener('load', active, false);
 
-init();
-createLights();
-createFloor();
-createLion();
-createFan();
-loop();
+function active(){
+    init();
+    createLights();
+    createFloor();
+    createLion();
+    createFan();
+    loop();
+}
+
 
 
 function clamp(v, min, max) {
