@@ -33,7 +33,7 @@ body {
  * Component: Button
  * --------------------------------------------------
  */
-.c-button {
+.btn {
 	-webkit-appearance: none;
 	position: relative;
 	display: inline-block;
@@ -58,11 +58,11 @@ body {
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
-.c-button:hover, .c-button:focus {
+.btn:hover, .btn:focus {
 	outline: 0;
 	text-decoration: none;
 }
-.c-button:not(:disabled) {
+.btn:not(:disabled) {
 	cursor: pointer;
 }
 
@@ -75,11 +75,11 @@ body {
  * Modifier: Purple
  * --------------------------------------------------
  */
-.c-button--purple {
+.btn-purple {
 	background: #967ADC;
 	text-shadow: 2px 2px 0 #7652d1;
 }
-.c-button--purple:hover {
+.btn-purple:hover {
 	background: #8666d7;
 }
 
@@ -88,11 +88,11 @@ body {
  * Modifier: Blue
  * --------------------------------------------------
  */
-.c-button--blue {
+.btn-blue {
 	background: #4A89DC;
 	text-shadow: 2px 2px 0 #276ecc;
 }
-.c-button--blue:hover {
+.btn-blue:hover {
 	background: #357bd8;
 }
 
@@ -101,11 +101,11 @@ body {
  * Modifier: Red
  * --------------------------------------------------
  */
-.c-button--red {
+.btn-red {
 	background: #E9573F;
 	text-shadow: 2px 2px 0 #dc3519;
 }
-.c-button--red:hover {
+.btn-red:hover {
 	background: #e64328;
 }
 
