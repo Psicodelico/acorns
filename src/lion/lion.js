@@ -276,7 +276,7 @@ Lion = function () {
     this.body = new THREE.Mesh(bodyGeom, this.yellowMat);
     this.body.position.z = -60;
     this.body.position.y = -30;
-    this.bodyVertices = [0, 1, 2, 3, 4, 10];
+    this.bodyVertices = [0, 1, 2, 3, 4, 9];// 10 => 9
 
     for (var i = 0; i < this.bodyVertices.length; i++) {
         var tv = this.body.geometry.vertices[this.bodyVertices[i]];
