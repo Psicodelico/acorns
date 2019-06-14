@@ -49,6 +49,20 @@
                 } while (elem);
             }
             return location >= 0 ? location : 0;
-        }
+        },
+        /**
+         * 获取元素距离可视区域的左上边距
+         *
+         * @param {*} el
+         * @returns
+         */
+        getPageTopLeft(el) {
+            var rect = el.getBoundingClientRect();
+            var docEl = document.documentElement;
+            return {
+                left: rect.left + (window.pageXOffset || docEl.scrollLeft || 0),
+                top: rect.top + (window.pageYOffset || docEl.scrollTop || 0)
+            };
+        },
     }
 })();
