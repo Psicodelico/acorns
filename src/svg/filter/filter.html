@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./filter.css">
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span>Normal</span>
+            <img src="../../../assets/images/girl.jpg" />
+        </li>
+        <li>
+            <span>Posterize</span>
+            <img src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#posterize); filter: url(#posterize);" />
+        </li>
+        <li>
+            <span>Invert</span>
+            <img src="../../../assets/images/girl.jpg" style="-webkit-filter: url(#invert); filter: url(#invert);" />
+        </li>
+        <li>
+            <span>Hue Rotate</span>
+            <img src="../../../assets/images/girl.jpg" style="-webkit-filter: url(#rotate); filter: url(#rotate);" />
+        </li>
+        <li>
+            <span>Alpha</span>
+            <img src="../../../assets/images/girl.jpg" style="-webkit-filter: url(#alpha); filter: url(#alpha);" />
+        </li>
+        <li>
+            <span>Gaussian Blur</span>
+            <img src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#gaussianBlur); filter: url(#gaussianBlur);" />
+        </li>
+        <li>
+            <span>saturate</span>
+            <img class="normal" src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#saturate); filter: url(#saturate);" />
+        </li>
+        <li>
+            <span>Gamma</span>
+            <img class="normal" src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#gamma); filter: url(#gamma);" />
+        </li>
+        <li>
+            <span>Emboss</span>
+            <img class="normal" src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#emboss); filter: url(#emboss);" />
+        </li>
+        <li>
+            <span>brightness_threshold</span>
+            <img class="normal" src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#brightness_threshold); filter: url(#brightness_threshold);" />
+        </li>
+        <li>
+            <span>brightness</span>
+            <img class="normal" src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#brightness); filter: url(#brightness);" />
+        </li>
+        <li>
+            <span>lighten</span>
+            <img class="normal" src="../../../assets/images/girl.jpg"
+                style="-webkit-filter: url(#lighten); filter: url(#lighten);" />
+        </li>
+        <li>
+            <span>darken</span>
+            <img src="../../../assets/images/girl.jpg" style="-webkit-filter: url(#darken); filter: url(#darken);" />
+        </li>
+    </ul>
+    <!-- svg -->
+    <svg>
+        <filter id="posterize">
+            <feComponentTransfer>
+                <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+                <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+                <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+            </feComponentTransfer>
+        </filter>
+
+        <filter id="invert">
+            <feComponentTransfer>
+                <feFuncR type="table" tableValues="1 0" />
+                <feFuncG type="table" tableValues="1 0" />
+                <feFuncB type="table" tableValues="1 0" />
+            </feComponentTransfer>
+        </filter>
+
+        <filter id="rotate">
+            <feColorMatrix type="hueRotate" values="180" />
+        </filter>
+
+        <filter id="alpha">
+            <feColorMatrix type="luminanceToAlpha" />
+        </filter>
+
+        <filter id="gaussianBlur">
+            <feGaussianBlur stdDeviation="3 3" />
+        </filter>
+
+        <filter id="saturate">
+            <feColorMatrix type="saturate" values="2" />
+        </filter>
+
+        <filter id="gamma">
+            <feComponentTransfer>
+                <feFuncG type="gamma" amplitude="1" exponent="0.5" offset="-0.1" />
+            </feComponentTransfer>
+        </filter>
+
+        <filter id="emboss">
+            <feConvolveMatrix order="5 5" preserveAlpha="true"
+                kernelMatrix="-1 0 0 0 0 0 -2 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0" />
+        </filter>
+
+        <filter id="brightness_threshold">
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.5" intercept="-0.3" />
+                <feFuncG type="linear" slope="1.5" intercept="-0.3" />
+                <feFuncB type="linear" slope="1.5" intercept="-0.3" />
+            </feComponentTransfer>
+        </filter>
+
+        <filter id="brightness">
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="3" />
+                <feFuncG type="linear" slope="3" />
+                <feFuncB type="linear" slope="3" />
+            </feComponentTransfer>
+        </filter>
+
+        <filter id="lighten" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+            <feFlood flood-color="#fff" flood-opacity="0.5" result="flood" />
+            <feBlend mode="screen" in2="flood" in="SourceGraphic" />
+        </filter>
+
+        <filter id="darken" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+            <feFlood flood-color="#000" flood-opacity="0.8" result="flood" />
+            <feBlend mode="darken" in2="flood" in="SourceGraphic" />
+        </filter>
+    </svg>
+</body>
+
+</html>
